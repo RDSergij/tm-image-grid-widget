@@ -1,6 +1,7 @@
 <?php
 /**
  * Frontend view
+ *
  * @package TM_Posts_Widget
  */
 
@@ -25,7 +26,7 @@ if ( ! defined( 'WPINC' ) ) {
 				<?php echo substr( get_the_excerpt(), 0, $excerpt_length ) . '...'; ?>
 			</div>
 		</a>
-		<?php if ( 0 == $index%$cols_count ) : ?>
+		<?php if ( 0 == $index % $cols_count ) : ?>
 		<div class="clear"></div>
 		<?php endif; ?>
 		<?php endwhile; ?>

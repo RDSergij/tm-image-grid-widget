@@ -1,6 +1,7 @@
 <?php
 /**
  * Admin view
+ *
  * @package TM_Posts_Widget
  */
 

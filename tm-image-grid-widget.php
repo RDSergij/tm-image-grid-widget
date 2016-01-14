@@ -54,13 +54,13 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 			);
 			// Set default settings
 			$this->instance_default = array(
-				'title'			=> __( 'List', PHOTOLAB_BASE_TM_ALIAS ),
-				'categories'	=> 0,
-				'cols_count'	=> 3,
-				'posts_count'	=> 6,
-				'posts_offset'	=> 0,
-				'excerpt_length'=> 20,
-				'padding'		=> 10,
+				'title'				=> __( 'List', PHOTOLAB_BASE_TM_ALIAS ),
+				'categories'		=> 0,
+				'cols_count'		=> 3,
+				'posts_count'		=> 6,
+				'posts_offset'		=> 0,
+				'excerpt_length'	=> 20,
+				'padding'			=> 10,
 			);
 		}
 
