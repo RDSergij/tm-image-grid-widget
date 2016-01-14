@@ -1,0 +1,52 @@
+/*
+* @section Messages
+*/
+@mixin grid_link() {
+	text-decoration: none;
+	color: white;
+	background-size: cover;
+	float: left;
+
+	&:hover {
+		color: white;
+	}
+
+	h4 {
+		font-size: 12px;
+	}
+	
+	.description {
+		font-size: 10px;
+	}
+}
+
+/*
+* @section widget
+*/
+.tm-image-grid-widget {
+	padding: 10px;
+
+	.grid {
+
+		&.grid-2 {
+			a {
+				width: 120px;
+				height: 70px;
+
+				@include grid_link();
+			}
+		}
+
+		&.grid-3 {
+			a {
+				width: 90px;
+				height: 70px;
+
+				@include grid_link();
+			}
+		}
+	}
+	.clear {
+		clear: both;
+	}
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAAoB;EACnB,MAAM,EAAE,iBAAiB;EACzB,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,mBAAmB;EAC5B,gBAAgB,EAAE,IAAI;EACtB,UAAU,EAAE,iCAAiC;EAC7C,OAAO,EAAE,MAAM;EACf,KAAK,EAAE,IAAI",
+"sources": ["ui-text.scss"],
+"names": [],
+"file": "ui-text.css"
+}
