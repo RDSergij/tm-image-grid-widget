@@ -1,0 +1,20 @@
+{
+  "preset": "wordpress",
+  "fileExtensions": [ ".js" ],
+  "excludeFiles": [
+    "assets/css/swiper.min.css",
+	"assets/js/swiper.min.js",
+	"assets/js/swiper.jquery.umd.min.js",
+	"assets/css/admin.min.css.map",
+	"assets/css/frontend.min.css.map",
+	"assets/css/admin.min.css",
+    "assets/js/cherry-api.min.js",
+    "assets/js/admin.min.js",
+	"assets/js/frontend.min.js",
+    "admin/lib/ui-elements/ui-text/assets/ui-text.js",
+    "admin/lib/ui-elements/ui-text/assets/ui-text.scss",
+	"admin/lib/ui-elements/ui-select/assets/ui-select2.js",
+    "admin/lib/ui-elements/ui-select/assets/ui-select2.scss",
+    "admin/lib/ui-elements/"
+  ]
+}
