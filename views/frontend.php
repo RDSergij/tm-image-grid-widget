@@ -2,7 +2,7 @@
 /**
  * Frontend view
  *
- * @package TM_Posts_Widget
+ * @package TM_Image_Grid_Widget
  */
 
 // If this file is called directly, abort.
