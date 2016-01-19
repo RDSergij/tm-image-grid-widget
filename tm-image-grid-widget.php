@@ -129,7 +129,6 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 			require_once __DIR__ . '/admin/lib/fox-ui-elements/ui-input.php';
 			require_once __DIR__ . '/admin/lib/fox-ui-elements/ui-select.php';
 
-
 			$title_field = new UI_Input_Fox(
 					array(
 						'id'			=> $this->get_field_id( 'title' ),
