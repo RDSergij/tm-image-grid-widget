@@ -110,13 +110,6 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 				$$key = ! empty( $instance[ $key ] ) ? $instance[ $key ] : $value;
 			}
 
-			// Ui cherri api
-			wp_register_script( 'tm-image-grid-script-api', plugins_url( 'assets/js/cherry-api.js', __FILE__ ) );
-			wp_localize_script( 'tm-image-grid-script-api', 'cherry_ajax', wp_create_nonce( 'cherry_ajax_nonce' ) );
-			wp_localize_script( 'tm-image-grid-script-api', 'wp_load_style', null );
-			wp_localize_script( 'tm-image-grid-script-api', 'wp_load_script', null );
-			wp_enqueue_script( 'tm-image-grid-script-api' );
-
 			// Custom js
 			wp_register_script( 'tm-image-grid-script-admin', plugins_url( 'assets/js/admin.min.js', __FILE__ ) );
 			wp_enqueue_script( 'tm-image-grid-script-admin' );
