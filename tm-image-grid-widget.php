@@ -60,7 +60,7 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 				'posts_count'		=> 6,
 				'posts_offset'		=> 0,
 				'excerpt_length'	=> 20,
-				'padding'			=> 10,
+				'padding'			=> 0,
 			);
 		}
 
@@ -126,20 +126,20 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 			wp_enqueue_style( 'tm-image-grid-admin' );
 
 			// include ui-elements
-			require_once __DIR__ . '/admin/lib/ui-elements/ui-text/ui-text.php';
-			require_once __DIR__ . '/admin/lib/ui-elements/ui-select/ui-select.php';
+			require_once __DIR__ . '/admin/lib/fox-ui-elements/ui-input.php';
+			require_once __DIR__ . '/admin/lib/fox-ui-elements/ui-select.php';
 
-			$title_field = new UI_Text(
-							array(
-									'id'            => $this->get_field_id( 'title' ),
-									'type'          => 'text',
-									'name'          => $this->get_field_name( 'title' ),
-									'placeholder'   => __( 'New title', PHOTOLAB_BASE_TM_ALIAS ),
-									'value'         => $title,
-									'label'         => __( 'Title widget', PHOTOLAB_BASE_TM_ALIAS ),
-							)
-					);
-			$title_html = $title_field->render();
+
+			$title_field = new UI_Input_Fox(
+					array(
+						'id'			=> $this->get_field_id( 'title' ),
+						'name'			=> $this->get_field_name( 'title' ),
+						'value'			=> $title,
+						'placeholder'	=> __( 'New title', PHOTOLAB_BASE_TM_ALIAS ),
+						'label'			=> __( 'Title widget', PHOTOLAB_BASE_TM_ALIAS ),
+					)
+			);
+			$title_html = $title_field->output();
 
 			$categories_list = get_categories( array( 'hide_empty' => 0 ) );
 			$categories_array = array( '0' => 'not selected' );
@@ -147,73 +147,69 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 				$categories_array[ $category_item->term_id ] = $category_item->name;
 			}
 
-			$categories_field = new UI_Select(
+			$category_field = new UI_Select_Fox(
 							array(
 								'id'				=> $this->get_field_id( 'categories' ),
 								'name'				=> $this->get_field_name( 'categories' ),
-								'value'				=> $categories,
+								'default'			=> $categories,
 								'options'			=> $categories_array,
 							)
 						);
-			$categories_html = $categories_field->render();
+			$categories_html = $category_field->output();
 
-			$cols_count_field = new UI_Select(
+			$cols_count_field = new UI_Select_Fox(
 							array(
 								'id'				=> $this->get_field_id( 'cols_count' ),
 								'name'				=> $this->get_field_name( 'cols_count' ),
-								'value'				=> $cols_count,
+								'default'			=> $cols_count,
 								'options'			=> array( 2 => 2, 3 => 3 ),
 							)
 						);
-			$cols_count_html = $cols_count_field->render();
+			$cols_count_html = $cols_count_field->output();
 
-			$posts_count_field = new UI_Text(
-							array(
-									'id'            => $this->get_field_id( 'posts_count' ),
-									'type'          => 'text',
-									'name'          => $this->get_field_name( 'posts_count' ),
-									'placeholder'   => __( 'posts count', PHOTOLAB_BASE_TM_ALIAS ),
-									'value'         => $posts_count,
-									'label'         => __( 'Count of posts', PHOTOLAB_BASE_TM_ALIAS ),
-							)
-					);
-			$posts_count_html = $posts_count_field->render();
-
-			$posts_offset_field = new UI_Text(
-							array(
-									'id'            => $this->get_field_id( 'posts_offset' ),
-									'type'          => 'text',
-									'name'          => $this->get_field_name( 'posts_offset' ),
-									'placeholder'   => __( 'posts offset', PHOTOLAB_BASE_TM_ALIAS ),
-									'value'         => $posts_offset,
-									'label'         => __( 'Offset', PHOTOLAB_BASE_TM_ALIAS ),
-							)
-					);
-			$posts_offset_html = $posts_offset_field->render();
-
-			$excerpt_length_field = new UI_Text(
+			$posts_count_field = new UI_Input_Fox(
 					array(
-							'id'            => $this->get_field_id( 'excerpt_length' ),
-							'type'          => 'text',
-							'name'          => $this->get_field_name( 'excerpt_length' ),
-							'placeholder'   => __( 'excerpt length', PHOTOLAB_BASE_TM_ALIAS ),
-							'value'         => $excerpt_length,
-							'label'         => __( 'Excerpt length', PHOTOLAB_BASE_TM_ALIAS ),
+						'id'			=> $this->get_field_id( 'posts_count' ),
+						'name'			=> $this->get_field_name( 'posts_count' ),
+						'value'			=> $posts_count,
+						'placeholder'	=> __( 'posts count', PHOTOLAB_BASE_TM_ALIAS ),
+						'label'			=> __( 'Count of posts', PHOTOLAB_BASE_TM_ALIAS ),
 					)
 			);
-			$excerpt_length_html = $excerpt_length_field->render();
+			$posts_count_html = $posts_count_field->output();
 
-			$padding_field = new UI_Text(
+			$posts_offset_field = new UI_Input_Fox(
 					array(
-							'id'            => $this->get_field_id( 'padding' ),
-							'type'          => 'text',
-							'name'          => $this->get_field_name( 'padding' ),
-							'placeholder'   => __( 'padding', PHOTOLAB_BASE_TM_ALIAS ),
-							'value'         => $padding,
-							'label'         => __( 'Padding', PHOTOLAB_BASE_TM_ALIAS ),
+						'id'			=> $this->get_field_id( 'posts_offset' ),
+						'name'			=> $this->get_field_name( 'posts_offset' ),
+						'value'			=> $posts_offset,
+						'placeholder'	=> __( 'posts offset', PHOTOLAB_BASE_TM_ALIAS ),
+						'label'			=> __( 'Offset', PHOTOLAB_BASE_TM_ALIAS ),
 					)
 			);
-			$padding_html = $padding_field->render();
+			$posts_offset_html = $posts_offset_field->output();
+
+			$excerpt_length_field = new UI_Input_Fox(
+					array(
+						'id'			=> $this->get_field_id( 'excerpt_length' ),
+						'name'			=> $this->get_field_name( 'excerpt_length' ),
+						'value'			=> $excerpt_length,
+						'placeholder'	=> __( 'excerpt length', PHOTOLAB_BASE_TM_ALIAS ),
+						'label'			=> __( 'Excerpt length', PHOTOLAB_BASE_TM_ALIAS ),
+					)
+			);
+			$excerpt_length_html = $excerpt_length_field->output();
+
+			$padding_field = new UI_Input_Fox(
+					array(
+						'id'			=> $this->get_field_id( 'padding' ),
+						'name'			=> $this->get_field_name( 'padding' ),
+						'value'			=> $padding,
+						'placeholder'	=> __( 'padding', PHOTOLAB_BASE_TM_ALIAS ),
+						'label'			=> __( 'Padding', PHOTOLAB_BASE_TM_ALIAS ),
+					)
+			);
+			$padding_html = $padding_field->output();
 
 			// show view
 			require 'views/widget-form.php';
