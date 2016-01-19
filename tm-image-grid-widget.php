@@ -81,10 +81,6 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
-			// Custom js
-			wp_register_script( 'tm-image-grid-script-frontend', plugins_url( 'assets/js/frontend.min.js', __FILE__ ), '', '', true );
-			wp_enqueue_script( 'tm-image-grid-script-frontend' );
-
 			// Custom styles
 			wp_register_style( 'tm-image-grid-frontend', plugins_url( 'assets/css/frontend.min.css', __FILE__ ) );
 			wp_enqueue_style( 'tm-image-grid-frontend' );
@@ -109,10 +105,6 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 			foreach ( $this->instance_default as $key => $value ) {
 				$$key = ! empty( $instance[ $key ] ) ? $instance[ $key ] : $value;
 			}
-
-			// Custom js
-			wp_register_script( 'tm-image-grid-script-admin', plugins_url( 'assets/js/admin.min.js', __FILE__ ) );
-			wp_enqueue_script( 'tm-image-grid-script-admin' );
 
 			// Custom styles
 			wp_register_style( 'tm-image-grid-admin', plugins_url( 'assets/css/admin.min.css', __FILE__ ) );
