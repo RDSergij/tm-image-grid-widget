@@ -1,13 +1,12 @@
 <?php
 /**
  * Description: Fox ui-elements
- * Version: 0.1.0
  * Author: Osadchyi Serhii
  * Author URI: https://github.com/RDSergij
  *
  * @package ui_input_fox
  *
- * @since 0.1.0
+ * @since 0.2.1
  */
 
 if ( ! class_exists( 'UI_Input_Fox' ) ) {
@@ -29,6 +28,7 @@ if ( ! class_exists( 'UI_Input_Fox' ) ) {
 			'name'				=> 'input-fox',
 			'value'				=> '',
 			'placeholder'		=> 'enter string',
+			'datalist'			=> null,
 		);
 
 		/**
@@ -87,6 +87,14 @@ if ( ! class_exists( 'UI_Input_Fox' ) ) {
 				$label = $this->settings['label'];
 				unset( $this->settings['label'] );
 			}
+
+			if ( ! empty( $this->settings['datalist'] ) &&  is_array( $this->settings['datalist'] ) ) {
+				$datalist = $this->settings['datalist'];
+				unset( $this->settings['datalist'] );
+			}
+
+			$datalist_id = $this->settings['id'] . '-datalist';
+
 			$attributes = '';
 			foreach ( $this->settings as $key => $value ) {
 				$attributes .= ' ' . $key . '="' . $value . '"';
