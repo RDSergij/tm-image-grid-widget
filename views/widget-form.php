@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
 	</p>
 
 	<p>
-		<?php echo $excerpt_length_html ?>
+		<?php echo $title_length_html ?>
 	</p>
 
 	<p>

@@ -8,11 +8,9 @@
 .tm-image-grid-widget .grid.grid-2 a { width: 120px; height: 70px; text-decoration: none; color: white; background-size: cover; float: left; }
 .tm-image-grid-widget .grid.grid-2 a:hover { color: white; }
 .tm-image-grid-widget .grid.grid-2 a h4 { font-size: 12px; }
-.tm-image-grid-widget .grid.grid-2 a .description { font-size: 10px; }
 .tm-image-grid-widget .grid.grid-3 a { width: 90px; height: 70px; text-decoration: none; color: white; background-size: cover; float: left; }
 .tm-image-grid-widget .grid.grid-3 a:hover { color: white; }
 .tm-image-grid-widget .grid.grid-3 a h4 { font-size: 12px; }
-.tm-image-grid-widget .grid.grid-3 a .description { font-size: 10px; }
 .tm-image-grid-widget .clear { clear: both; }
 
 /*# sourceMappingURL=frontend.min.css.map */

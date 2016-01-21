@@ -59,7 +59,7 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 				'cols_count'		=> 3,
 				'posts_count'		=> 6,
 				'posts_offset'		=> 0,
-				'excerpt_length'	=> 20,
+				'title_length'		=> 20,
 				'padding'			=> 0,
 			);
 		}
@@ -173,16 +173,16 @@ if ( ! class_exists( 'TM_Image_Grid_Widget' ) ) {
 			);
 			$posts_offset_html = $posts_offset_field->output();
 
-			$excerpt_length_field = new UI_Input_Fox(
+			$title_length_field = new UI_Input_Fox(
 					array(
-						'id'			=> $this->get_field_id( 'excerpt_length' ),
-						'name'			=> $this->get_field_name( 'excerpt_length' ),
-						'value'			=> $excerpt_length,
-						'placeholder'	=> __( 'excerpt length', PHOTOLAB_BASE_TM_ALIAS ),
-						'label'			=> __( 'Excerpt length', PHOTOLAB_BASE_TM_ALIAS ),
+						'id'			=> $this->get_field_id( 'title_length' ),
+						'name'			=> $this->get_field_name( 'title_length' ),
+						'value'			=> $title_length,
+						'placeholder'	=> __( 'title length', PHOTOLAB_BASE_TM_ALIAS ),
+						'label'			=> __( 'Title length', PHOTOLAB_BASE_TM_ALIAS ),
 					)
 			);
-			$excerpt_length_html = $excerpt_length_field->output();
+			$title_length_html = $title_length_field->output();
 
 			$padding_field = new UI_Input_Fox(
 					array(

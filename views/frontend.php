@@ -27,10 +27,13 @@ if ( ! defined( 'WPINC' ) ) {
 				<?php endif; ?>
 				margin: <?php echo $padding ?>px;
 		   ">
-			<h4><?php echo get_the_title() ?></h4>
-			<div class="description">
-				<?php echo substr( get_the_excerpt(), 0, $excerpt_length ) . '...'; ?>
-			</div>
+			<h4>
+				<?php if ( $title_length < mb_strlen( get_the_title(), 'UTF-8') ) : ?>
+				<?php echo substr( get_the_title(), 0, $title_length ) . '...'; ?>
+				<?php else : ?>
+				<?php echo get_the_title(); ?>
+				<?php endif; ?>
+			</h4>
 		</a>
 		<?php if ( 0 == $index % $cols_count ) : ?>
 		<div class="clear"></div>
