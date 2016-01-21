@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 				margin: <?php echo $padding ?>px;
 		   ">
 			<h4>
-				<?php if ( $title_length < mb_strlen( get_the_title(), 'UTF-8') ) : ?>
+				<?php if ( $title_length < mb_strlen( get_the_title(), 'UTF-8' ) ) : ?>
 				<?php echo substr( get_the_title(), 0, $title_length ) . '...'; ?>
 				<?php else : ?>
 				<?php echo get_the_title(); ?>
